@@ -11,3 +11,7 @@ Identify the difference between our casual and annual riders. We'll be on the lo
 - Cyclistic Marketing Analytics Team (my team)
 - Cyclistic Executive Team 
 
+### Our Data
+Special thank you to Motivate International Inc. for providing the following data:
+[Cyclistic Trip Data](https://divvy-tripdata.s3.amazonaws.com/index.html)
+
