@@ -6,7 +6,7 @@ Cyclistic is a Chicago-based bike sharing company. The firm operates a bike-shar
 ### Scenario
 You are a junior data analyst working for the marketing analyst team for Cyclistic. The Director of Marketing Lily Moreno believes that annual memeberships are the key to future success for the company. Your team wants the understand the differences between how casual and annual memebers use the cyclistic bike-sharing program. Using these insights your team will make a recommendation to convert casual riders to annual members. The information provided needs to be compelling filled with strong visuals in order for the executives at cyclistic to approve it. 
 
-Moreno has you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
+Moreno has asked you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
 
 
 ### Business Task
@@ -23,7 +23,24 @@ Special thank you to Motivate International Inc. for providing the following dat
 - The data seems trustworthy, and the time period appears to correspond to the proper dates and times.
 - Data is understandable and reasonable
 
+**R Programming was used for this analysis**
 
 ## Analysis
+```{r}
+## Required Libraries
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(readxl)
+library(dplyr)
+library(scales) 
+library(ggplot2)
+library(Rserve)
+library(RColorBrewer)
+library(chron)
+```
+
+
+
 
 
