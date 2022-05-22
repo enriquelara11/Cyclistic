@@ -9,17 +9,21 @@ You are a junior data analyst working for the marketing analyst team for Cyclist
 Moreno has you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
 
 
-### Our Business Task
+### Business Task
 Identify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We will give recommendations based on our findings on how to raise the number of annual members. Our marketing staff will then be informed of our results.
 
-### Our Stakeholders
+### Stakeholders
 - Director of Marketing: Lily Moreno
 - Cyclistic Marketing Analytics Team (my team)
 - Cyclistic Executive Team 
 
-### Our Data
+### Data
 Special thank you to Motivate International Inc. for providing the following data:
 [Cyclistic Trip Data](https://divvy-tripdata.s3.amazonaws.com/index.html)
+- The data seems trustworthy, and the time period appears to correspond to the proper dates and times.
+- Data is understandable and reasonable
 
+
+## Analysis
 
 
