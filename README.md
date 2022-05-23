@@ -184,8 +184,8 @@ bike_rides_5am_8pm %>%
 ```
 
 ### Conclusion
-
-
+From our anylsis we have found that annual and casual riders differe in many aspect, but we believe these are some of the of the most important differences.
+1. Casual riders 
 
 
 
