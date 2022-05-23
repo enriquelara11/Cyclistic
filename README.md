@@ -40,6 +40,92 @@ library(RColorBrewer)
 library(chron)
 ```
 
+```{r}
+##Importing the csv files into new data frames
+df1 <- read_csv("202101-divvy-tripdata.csv")
+df2 <- read_csv("202102-divvy-tripdata.csv")
+df3 <- read_csv("202103-divvy-tripdata.csv")
+df4 <- read_csv("202104-divvy-tripdata.csv")
+df5 <- read_csv("202105-divvy-tripdata.csv")
+df6 <- read_csv("202106-divvy-tripdata.csv")
+df7 <- read_csv("202107-divvy-tripdata.csv")
+df8 <- read_csv("202108-divvy-tripdata.csv")
+df9 <- read_csv("202109-divvy-tripdata.csv")
+df10 <- read_csv("202110-divvy-tripdata.csv")
+df11 <- read_csv("202111-divvy-tripdata.csv")
+df12 <- read_csv("202112-divvy-tripdata.csv")
+```
+
+## Data Cleaning
+```{r}
+#Data Cleaning 
+### Combining the different data files
+bike_rides <- rbind(df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12)
+
+### Using the lubridate function to convert start date and end date to TIMESTAMPS
+bike_rides$started_at <- lubridate::mdy_hm(bike_rides$started_at)
+bike_rides$ended_at <- lubridate::mdy_hm(bike_rides$ended_at)
+
+### also using lubridate to convert ride_length to time stamps as well
+bike_rides$ride_length <- lubridate::hms(bike_rides$ride_length)
+
+### Removing any empty rows
+bike_rides %>%
+  remove_empty()
+
+```
+
+## Descriptive Analysis
+```{r}
+# Descriptive Analysis
+###Number of rides in our dataset
+bike_rides %>% 
+  group_by(member_casual) %>% 
+  count()
+
+###Members vs Non Members Count/Percentages
+bike_rides %>% 
+  group_by(member_casual) %>% 
+  drop_na() %>% 
+  summarise(n = n()) %>% 
+  mutate(percent = round(n / sum(n), 2))
+
+###Difference between the days bikers members and casuals like to ride?
+bike_rides %>% 
+  group_by(day_week_label, member_casual) %>% 
+  drop_na() %>% 
+  summarise(n = n()) %>% 
+  mutate(percent = round(n / sum(n), 3)) %>% 
+  arrange(desc(percent))
+
+### Different ride lenghts spent by member and casuals
+bike_rides %>%  
+  group_by(member_casual) %>% 
+  drop_na() %>%  
+  summarise(avg_ride_length = mean(times(ride_length)))
+
+###What time of years do most people ride bikes
+####Creating a month_of_use lable to identify the month of the ride
+bike_rides$month_of_use <- lubridate::month(bike_rides$started_at)
+bike_rides %>% 
+  group_by(month_of_use) %>% 
+  summarise(n = n()) %>% 
+  drop_na() %>% 
+  mutate(percentage = round(n/sum(n), 3)) %>% 
+  arrange(desc(percentage))
+
+### most popular ride type?
+rideable_type_percent <- bike_rides %>% 
+                          group_by(rideable_type) %>% 
+                          summarise(n = n()) %>% 
+                          mutate(percentage = round(n/sum(n), 3)) %>% 
+                          arrange(desc(percentage))
+
+```
+
+## Visualization
+
+
 
 
 
