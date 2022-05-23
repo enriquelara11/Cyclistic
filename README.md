@@ -23,7 +23,10 @@ Special thank you to Motivate International Inc. for providing the following dat
 - The data seems trustworthy, and the time period appears to correspond to the proper dates and times.
 - Data is understandable and reasonable
 
-**R Programming was used for this analysis**
+### Data Limitation
+Upon further review of the data some of the data some of the start_station_name, start_station_id, end_station_name, end_station_id variables had missing values. These missing values are important to the overall anal 
+
+
 
 ## Analysis
 ```{r}
