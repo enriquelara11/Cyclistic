@@ -185,7 +185,15 @@ bike_rides_5am_8pm %>%
 
 ### Conclusion
 From our anylsis we have found that annual and casual riders differe in many aspect, but we believe these are some of the of the most important differences.
-1. Casual riders 
+1. Casual riders trend upwards towards the weekend compared with annual riders
+2. Annual riders ride more consistently when compared to casuals
+3. During warmer weather riders usually ride more when compared to winter months
+
+We believe these 3 recommendations will be the most impactful when converting casual riders to annual members:
+1. Target casuals with specified advertisments. Highlight the defining charactersitics of the membership to casual riders.
+2. Sway customers by increasing the intital price that casuals pay for riding. Using this method we may be able to convince those individuals who are on the fence about swithcing.
+3. We could breakup the membership. Different needs for different people. From our analysis we can see differences between annual and casual riders, so we could create a memebership that is appealing for a larger group of customers.
+
 
 
 
