@@ -190,11 +190,13 @@ From our anylsis we have found that annual and casual riders differe in many asp
 3. During warmer weather riders usually ride more when compared to winter months
 
 We believe these 3 recommendations will be the most impactful when converting casual riders to annual members:
-1. Target casuals with specified advertisments. Highlight the defining charactersitics of the membership to casual riders.
-2. Sway customers by increasing the intital price that casuals pay for riding. Using this method we may be able to convince those individuals who are on the fence about swithcing.
-3. We could breakup the membership. Different needs for different people. From our analysis we can see differences between annual and casual riders, so we could create a memebership that is appealing for a larger group of customers.
+1. Target casuals with specified advertisements. Emphasize the distinguising characteristics of the memership. Health and excercise for exmaple are two topics that could be promoted.
+2. Increase the initial fee that casual riders pay for riding. We may be able to persuade people who are on the fence about switching using this strategy by making the annual membership more appealing.
+3. We could breakup the membership. Different needs for different people. From our analysis we can see differences between annual and casual riders, so we could create a memebership that is appealing for a larger group of customers. A seasonal membership could be one example.
 
 
+
+Thank you for looking at my project! I hope you enjoyed it as much as I did!
 
 
 
