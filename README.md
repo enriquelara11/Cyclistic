@@ -127,7 +127,61 @@ rideable_type_percent <- bike_rides %>%
 ```
 
 ## Visualization
+```{r}
+### visualizing the number rides per ride type by casual or member
+ride_type_label <- c("Classic bike", "Electric bike", "Docked bike")
+bike_rides %>% 
+  group_by(rideable_type, member_casual) %>% 
+  summarize(count = n()) %>% 
+  mutate(percentage = round(count/sum(count), 3)) %>% 
+  ggplot(aes(x=reorder(rideable_type, -count), y=count, fill=member_casual)) + 
+  geom_bar(stat="identity", position="dodge", colour="black") + theme_classic() +
+  labs(title = "Number of Rides for Each Ride Type", 
+       x = "Different Type of Ride", y = "Number of Bike Rides") + 
+  scale_x_discrete(labels = ride_type_label) + scale_y_continuous(labels = comma) + 
+  theme(plot.title = element_text(face='bold')) + 
+  scale_fill_manual("legend", values=c("member" = "mistyrose", "casual" = "lightblue"))
 
+```
+```{r}
+### visualizing our riders through the day
+bike_rides %>%  
+  group_by(member_casual, day_week_label) %>% 
+  summarize(Count = n()) %>% 
+  ggplot(aes(x=day_week_label, y=Count, fill=member_casual)) +
+  geom_bar(colour="black", stat='identity', position = 'dodge') + theme_classic() +
+  labs(title = "Number of Bike Rides for Different days of the week", 
+  x = "Day of the Week", y = "Number of Bike Rides") + 
+  theme(plot.title = element_text(face='bold'), legend.title= element_blank()) +
+  scale_y_continuous(labels = comma) + 
+  scale_fill_manual("legend", values = c("member" = "mistyrose", "casual" = "lightblue")) 
+
+
+```
+
+```{r}
+## finding the hr which most people start their ride
+bike_rides$start_hour <- lubridate::hour(bike_rides$started_at)
+#### only show DF with Hrs that are between 5 and 21 = 6m and 8pm
+bike_rides_5am_8pm <- subset(bike_rides, start_hour > 5 & start_hour <21) 
+
+### Visual for the hrs between 5am and 8pm
+number_hrs_label <- c("6am", "7am", "8am", "9am", "10am", "11am", "12pm", 
+                      "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm")
+
+bike_rides_5am_8pm %>% 
+  group_by(member_casual, start_hour) %>% 
+  summarize(count = n()) %>% 
+  ggplot(aes(x = start_hour, y = count, fill = factor(member_casual, levels = c("member", "casual")))) +
+  geom_area(stat = "identity", position = "dodge", colour = "black", alpha = 0.6) + 
+  scale_y_continuous(labels = comma) + 
+  scale_x_continuous(labels = number_hrs_label, breaks = 6:20) +
+  labs(x = "Time of Day", y = "Number of Rides", title = "Number of rides taken by different type of members during the day") +
+  theme_classic() +theme(plot.title = element_text(face="bold"),
+                                                   legend.title= element_blank()) +
+  scale_fill_manual("legend", values=c("member" = "mistyrose", "casual" = "lightblue"))
+
+```
 
 
 
