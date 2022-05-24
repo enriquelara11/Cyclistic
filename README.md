@@ -1,30 +1,35 @@
-### Enriuqe Lara's Porfolio
-
 # Google Data Analytics Capstone Project: Cyclistic Bike-share Analysis
+
+## Introduction and Overview of our Scenario
 Cyclistic is a Chicago-based bike sharing company. The firm operates a bike-sharing program with about 5,800 bikes and 600 docking stations located across the city. Cyclistic makes bike-sharing more accessible to those with disabilities by providing reclining bikes, hand tricycles, and cargo bikes. The comapny started a successful bike-sahring service in 2016 and since then, the firm has grown to over 5200 bicycles that are geotracked and linked to a network of over 620 stations across Chicago. So far the company has relied on building general awareness and appealing to customer segments. With options for single-day passes, full-day passes, and yearly memberships, pricing flexibility has been a cornerstone of the company's success. Annual memberships, according to our Director of Marketing, will be the key to future growth.
 
-### Scenario
 You are a junior data analyst working for the marketing analyst team for Cyclistic. The Director of Marketing Lily Moreno believes that annual memeberships are the key to future success for the company. Your team wants the understand the differences between how casual and annual memebers use the cyclistic bike-sharing program. Using these insights your team will make a recommendation to convert casual riders to annual members. The information provided needs to be compelling filled with strong visuals in order for the executives at cyclistic to approve it. 
 
 Moreno has asked you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
 
 
 ### Business Task
-Identify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We will give recommendations based on our findings on how to raise the number of annual members. Our marketing staff will then be informed of our results.
+Our goal is to dentify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We've been tasked with developing recommendations based on our results for increasing the number of annual members. The results will then be shared with our marketing team.
 
 ### Stakeholders
 - Director of Marketing: Lily Moreno
 - Cyclistic Marketing Analytics Team (my team)
 - Cyclistic Executive Team 
 
-### Data
+## Our Data
 Special thank you to Motivate International Inc. for providing the following data:
-[Cyclistic Trip Data](https://divvy-tripdata.s3.amazonaws.com/index.html)
-- The data seems trustworthy, and the time period appears to correspond to the proper dates and times.
-- Data is understandable and reasonable
+[Cyclistic Trip Data](https://divvy-tripdata.s3.amazonaws.com/index.html) under the following [license](https://ride.divvybikes.com/data-license-agreement).
 
-### Data Limitation
-Upon further review of the data some of the data some of the start_station_name, start_station_id, end_station_name, end_station_id variables had missing values. These missing values are important to the overall anal 
+We will be using the "ROCCC" method to determine the credibility and integrity of the data.
+- Reliability: The data is reliable, there is a strucutre to the data that is well maintained through various datasets. 
+- Orginality: The data does appear to be reliable, it is provided by Motivate International Inc.
+- Comprehensiveness: The data can be well understood, there appears to be a minor number of errors throughtout the data.
+- Current: The data is current, we examined data for the year 2021 which was complete.
+- Cited: The data 
+
+
+### Limits of our Data
+Upon further review of the data we can see that there are some missing values in the columns start_station_name, start_station_id, end_station_name, end_station_id. 
 
 ## Cleaning our Data
 We begin by installing/loading the required libraries for our analysis. 
