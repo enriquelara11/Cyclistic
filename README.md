@@ -1,4 +1,6 @@
 # Google Data Analytics Capstone Project: Cyclistic Bike-share Analysis
+Presented by Enrique Lara
+This is my capstone project for the Google Data Analytics Proffesional Certificate, hope you guys enjoy!
 
 ## Introduction and Overview of our Scenario
 Cyclistic is a Chicago-based bike sharing company. The firm operates a bike-sharing program with about 5,800 bikes and 600 docking stations located across the city. Cyclistic makes bike-sharing more accessible to those with disabilities by providing reclining bikes, hand tricycles, and cargo bikes. The comapny started a successful bike-sahring service in 2016 and since then, the firm has grown to over 5200 bicycles that are geotracked and linked to a network of over 620 stations across Chicago. So far the company has relied on building general awareness and appealing to customer segments. With options for single-day passes, full-day passes, and yearly memberships, pricing flexibility has been a cornerstone of the company's success. Annual memberships, according to our Director of Marketing, will be the key to future growth.
