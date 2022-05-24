@@ -21,15 +21,17 @@ Special thank you to Motivate International Inc. for providing the following dat
 [Cyclistic Trip Data](https://divvy-tripdata.s3.amazonaws.com/index.html) under the following [license](https://ride.divvybikes.com/data-license-agreement).
 
 We will be using the "ROCCC" method to determine the credibility and integrity of the data.
-- Reliability: The data is reliable, there is a strucutre to the data that is well maintained through various datasets. 
-- Orginality: The data does appear to be reliable, it is provided by Motivate International Inc.
-- Comprehensiveness: The data can be well understood, there appears to be a minor number of errors throughtout the data.
-- Current: The data is current, we examined data for the year 2021 which was complete.
-- Cited: The data 
+- Reliability: The data is trustworthy, and the data has a consistent structure across several datasets. The information comes from Lyft Bikes and Scooters, LLC, the City of Chicago, and the Divvy service provider.
+- Orginality: Motivate International Inc. and the city of Chicago offer the data, which are credible sources.
+- Comprehensiveness: The data is well-understood, and each of the dataset's factors makes sense.
+- Current: Dates in the data are current, we examined datsets for each month of the year 2021.
+- Cited: The data is cited under the license aggreement.
 
 
-### Limits of our Data
-Upon further review of the data we can see that there are some missing values in the columns start_station_name, start_station_id, end_station_name, end_station_id. 
+### Limits in our Data
+Upon further review of the data we can see that there are some missing values in the columns "start_station_name", "start_station_id", "end_station_name", "end_station_id".
+
+While the missing values may have an impact on our overall analysis, we feel we have enough data to compensate for any bias introduced by such missing values. 
 
 ## Cleaning our Data
 We begin by installing/loading the required libraries for our analysis. 
