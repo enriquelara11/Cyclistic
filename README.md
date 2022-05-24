@@ -26,9 +26,8 @@ Special thank you to Motivate International Inc. for providing the following dat
 ### Data Limitation
 Upon further review of the data some of the data some of the start_station_name, start_station_id, end_station_name, end_station_id variables had missing values. These missing values are important to the overall anal 
 
-
-
-## Analysis
+## Cleaning our Data
+We begin by installing/loading the required libraries for our analysis. 
 ```{r}
 ## Required Libraries
 library(tidyverse)
@@ -42,7 +41,7 @@ library(Rserve)
 library(RColorBrewer)
 library(chron)
 ```
-
+We will import our 12 .csv files. Each of the files represents a month of the year.
 ```{r}
 ##Importing the csv files into new data frames
 df1 <- read_csv("202101-divvy-tripdata.csv")
@@ -58,8 +57,8 @@ df10 <- read_csv("202110-divvy-tripdata.csv")
 df11 <- read_csv("202111-divvy-tripdata.csv")
 df12 <- read_csv("202112-divvy-tripdata.csv")
 ```
-
-## Data Cleaning
+###Prepare the data:
+In this step we will prepare the data for analysis. We will combine the data into one single data frame, convert the dates and time to timestamps wihtin R, and finally remove any empty rows if any.
 ```{r}
 #Data Cleaning 
 ### Combining the different data files
@@ -78,110 +77,8 @@ bike_rides %>%
 
 ```
 
-## Descriptive Analysis
-```{r}
-# Descriptive Analysis
-###Number of rides in our dataset
-bike_rides %>% 
-  group_by(member_casual) %>% 
-  count()
-
-###Members vs Non Members Count/Percentages
-bike_rides %>% 
-  group_by(member_casual) %>% 
-  drop_na() %>% 
-  summarise(n = n()) %>% 
-  mutate(percent = round(n / sum(n), 2))
-
-###Difference between the days bikers members and casuals like to ride?
-bike_rides %>% 
-  group_by(day_week_label, member_casual) %>% 
-  drop_na() %>% 
-  summarise(n = n()) %>% 
-  mutate(percent = round(n / sum(n), 3)) %>% 
-  arrange(desc(percent))
-
-### Different ride lenghts spent by member and casuals
-bike_rides %>%  
-  group_by(member_casual) %>% 
-  drop_na() %>%  
-  summarise(avg_ride_length = mean(times(ride_length)))
-
-###What time of years do most people ride bikes
-####Creating a month_of_use lable to identify the month of the ride
-bike_rides$month_of_use <- lubridate::month(bike_rides$started_at)
-bike_rides %>% 
-  group_by(month_of_use) %>% 
-  summarise(n = n()) %>% 
-  drop_na() %>% 
-  mutate(percentage = round(n/sum(n), 3)) %>% 
-  arrange(desc(percentage))
-
-### most popular ride type?
-rideable_type_percent <- bike_rides %>% 
-                          group_by(rideable_type) %>% 
-                          summarise(n = n()) %>% 
-                          mutate(percentage = round(n/sum(n), 3)) %>% 
-                          arrange(desc(percentage))
-
-```
-
-## Visualization
-```{r}
-### visualizing the number rides per ride type by casual or member
-ride_type_label <- c("Classic bike", "Electric bike", "Docked bike")
-bike_rides %>% 
-  group_by(rideable_type, member_casual) %>% 
-  summarize(count = n()) %>% 
-  mutate(percentage = round(count/sum(count), 3)) %>% 
-  ggplot(aes(x=reorder(rideable_type, -count), y=count, fill=member_casual)) + 
-  geom_bar(stat="identity", position="dodge", colour="black") + theme_classic() +
-  labs(title = "Number of Rides for Each Ride Type", 
-       x = "Different Type of Ride", y = "Number of Bike Rides") + 
-  scale_x_discrete(labels = ride_type_label) + scale_y_continuous(labels = comma) + 
-  theme(plot.title = element_text(face='bold')) + 
-  scale_fill_manual("legend", values=c("member" = "mistyrose", "casual" = "lightblue"))
-
-```
-```{r}
-### visualizing our riders through the day
-bike_rides %>%  
-  group_by(member_casual, day_week_label) %>% 
-  summarize(Count = n()) %>% 
-  ggplot(aes(x=day_week_label, y=Count, fill=member_casual)) +
-  geom_bar(colour="black", stat='identity', position = 'dodge') + theme_classic() +
-  labs(title = "Number of Bike Rides for Different days of the week", 
-  x = "Day of the Week", y = "Number of Bike Rides") + 
-  theme(plot.title = element_text(face='bold'), legend.title= element_blank()) +
-  scale_y_continuous(labels = comma) + 
-  scale_fill_manual("legend", values = c("member" = "mistyrose", "casual" = "lightblue")) 
 
 
-```
-
-```{r}
-## finding the hr which most people start their ride
-bike_rides$start_hour <- lubridate::hour(bike_rides$started_at)
-#### only show DF with Hrs that are between 5 and 21 = 6m and 8pm
-bike_rides_5am_8pm <- subset(bike_rides, start_hour > 5 & start_hour <21) 
-
-### Visual for the hrs between 5am and 8pm
-number_hrs_label <- c("6am", "7am", "8am", "9am", "10am", "11am", "12pm", 
-                      "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm")
-
-bike_rides_5am_8pm %>% 
-  group_by(member_casual, start_hour) %>% 
-  summarize(count = n()) %>% 
-  ggplot(aes(x = start_hour, y = count, fill = factor(member_casual, levels = c("member", "casual")))) +
-  geom_area(stat = "identity", position = "dodge", colour = "black", alpha = 0.6) + 
-  scale_y_continuous(labels = comma) + 
-  scale_x_continuous(labels = number_hrs_label, breaks = 6:20) +
-  labs(x = "Time of Day", y = "Number of Rides", title = "Number of rides taken by different type of members during the day") +
-  theme_classic() +theme(plot.title = element_text(face="bold"),
-                                                   legend.title= element_blank()) +
-  scale_fill_manual("legend", values=c("member" = "mistyrose", "casual" = "lightblue"))
-
-```
 
 ### Conclusion
 Based on our analysis we discovered that annual and causual riders differ in the way in which they ride our bikes. Casuals tend to be more impulsive, enthusiastic about riding near the city's coast and skyline while annual members appear to be motivated, living on a consistent schedule, and riding our bike for sport.
