@@ -107,10 +107,10 @@ From our analysis we have draw 3 recommendations we believe can be effective at 
 3. We could breakup the membership. Different needs for different people. From our analysis we can see differences between annual and casual riders, so we could create a memebership that is appealing for a larger group of customers. A seasonal membership could be one example.
 
 ## Share
-I was able to develop a presentation where I could convey all of my findings utilizing visuals created in R and some in Tableau. I'm happy to share my creation with you via this link.
+I was able to develop a presentation where I could convey all of my findings utilizing visuals created in R and some in Tableau. I'm happy to share my creation with you via this [link](https://github.com/enriquelara11/Cyclistic/blob/main/Presentation.pdf).
 
 
-Thank you for looking at my project! I hope you enjoyed it as much as I did!
+Thank you for taking your time to look at my project! I hope you enjoyed it as much as I did! 😁📊
 
 
 
