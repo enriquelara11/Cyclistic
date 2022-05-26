@@ -10,14 +10,13 @@ You are a junior data analyst working for the marketing analyst team for Cyclist
 
 Moreno has asked you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
 
-
-### Business Task
-Our goal is to dentify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We've been tasked with developing recommendations based on our results for increasing the number of annual members. The results will then be shared with our marketing team.
-
 ### Stakeholders
 - Director of Marketing: Lily Moreno
 - Cyclistic Marketing Analytics Team (my team)
 - Cyclistic Executive Team 
+
+### Business Task
+Our goal is to dentify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We've been tasked with developing recommendations based on our results for increasing the number of annual members. The results will then be shared with our marketing team.
 
 ## Our Data
 Special thank you to Motivate International Inc. for providing the following data:
@@ -37,6 +36,8 @@ Upon further review of the data we can see that there are some missing values in
 While the missing values may have an impact on our overall analysis, we feel we have enough data to compensate for any bias introduced by such missing values. 
 
 ## Cleaning our Data
+Cleaning our data is an important step in the Data Analysis process since it eliminates flaws that could render our data useless.
+
 We begin by installing/loading the required libraries for our analysis. 
 ```{r}
 ## Required Libraries
@@ -90,7 +91,7 @@ bike_rides %>%
 
 
 
-### Conclusion
+## Analyze
 Based on our analysis we discovered that annual and causual riders differ in the way in which they ride our bikes. Casuals tend to be more impulsive, enthusiastic about riding near the city's coast and skyline while annual members appear to be motivated, living on a consistent schedule, and riding our bike for sport.
 
 
@@ -99,6 +100,8 @@ From our analysis we have draw 3 recommendations we believe can be effective at 
 2. Increase the initial fee that casual riders pay for riding. We may be able to persuade people who are on the fence about switching using this strategy by making the annual membership more appealing.
 3. We could breakup the membership. Different needs for different people. From our analysis we can see differences between annual and casual riders, so we could create a memebership that is appealing for a larger group of customers. A seasonal membership could be one example.
 
+## Share
+I was able to develop a presentation where I could convey all of my findings utilizing visuals created in R and some in Tableau. I'm happy to share my creation with you via this link.
 
 
 Thank you for looking at my project! I hope you enjoyed it as much as I did!
