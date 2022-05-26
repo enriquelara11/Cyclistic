@@ -35,10 +35,10 @@ Upon further review of the data we can see that there are some missing values in
 
 While the missing values may have an impact on our overall analysis, we feel we have enough data to compensate for any bias introduced by such missing values. 
 
-## Cleaning our Data
+### Cleaning our Data
 Cleaning our data is an important step in the Data Analysis process since it eliminates flaws that could render our data useless.
 
-We begin by installing/loading the required libraries for our analysis. 
+> We begin by installing/loading the required libraries for our analysis:
 ```{r}
 ## Required Libraries
 library(tidyverse)
@@ -52,7 +52,7 @@ library(Rserve)
 library(RColorBrewer)
 library(chron)
 ```
-We will import our 12 .csv files. Each of the files represents a month of the year.
+> We move on to importing the required files to our working enviroment in R. In this case we have 12 CSV files, each representing a month of the year for 2021.
 ```{r}
 ##Importing the csv files into new data frames
 df1 <- read_csv("202101-divvy-tripdata.csv")
@@ -68,25 +68,30 @@ df10 <- read_csv("202110-divvy-tripdata.csv")
 df11 <- read_csv("202111-divvy-tripdata.csv")
 df12 <- read_csv("202112-divvy-tripdata.csv")
 ```
-###Prepare the data:
-In this step we will prepare the data for analysis. We will combine the data into one single data frame, convert the dates and time to timestamps wihtin R, and finally remove any empty rows if any.
+### Preparing our data for analysis
+Preparing our data is essential for making it efficient and accessible to others. We'll use R to modify our data because of its rich visualization capabilities and statistical analysis, both of which are critical for our analysis.
+
+> To work better with our data, we need to consolidate and create one single data frame, we will be using the Rbind function in R to perform the task.
 ```{r}
-#Data Cleaning 
 ### Combining the different data files
 bike_rides <- rbind(df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12)
-
+```
+> We'll utilize the Lubridate function to create a consistent date format because our data contains dates that aren't easily rocongized by R.
+```{r}
 ### Using the lubridate function to convert start date and end date to TIMESTAMPS
 bike_rides$started_at <- lubridate::mdy_hm(bike_rides$started_at)
 bike_rides$ended_at <- lubridate::mdy_hm(bike_rides$ended_at)
 
 ### also using lubridate to convert ride_length to time stamps as well
 bike_rides$ride_length <- lubridate::hms(bike_rides$ride_length)
-
+```
+> We will remove any empty rows in our dataset using the following operation.
+```{r}
 ### Removing any empty rows
 bike_rides %>%
   remove_empty()
-
 ```
+Further anlaysis of our project can be reviewed here [Cyclist_R_Markdown.Rmd](https://github.com/enriquelara11/Cyclistic/blob/main/Cyclist_R_Markdown.Rmd).
 
 
 
