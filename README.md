@@ -1,5 +1,5 @@
 # Google Data Analytics Capstone Project: Cyclistic Bike-share Analysis
-Presented by Enrique Lara
+*Presented by Enrique Lara*
 
 This is my capstone project for the Google Data Analytics Proffesional Certificate, hope you guys enjoy!
 
@@ -11,9 +11,9 @@ You are a junior data analyst working for the marketing analyst team for Cyclist
 Moreno has asked you to ansers the first question: How do annual members and casual riders use Cyclistic bikes diﬀerently?
 
 ### Stakeholders
-- Director of Marketing: Lily Moreno
-- Cyclistic Marketing Analytics Team (my team)
-- Cyclistic Executive Team 
+- Lily Moreno: Director of marketing and our manager. She oversees the development of campaigns and initiatives to promote our bike-sharing program.
+- Cyclistic Marketing Analytics Team: A group of data analysts in charge of gathering, analyzing, and guiding Cyclistic's marketing strategy. This is also the team to which I belong. 
+- Cyclistic Executive Team: The notoriously detail-oriented executive team. This group of individuals will determine whether or not to accept the marketing team's recommendatio.
 
 ### Business Task
 Our goal is to dentify the difference between our casual and annual riders. We'll be on the lookout for patterns and clues as to what distinguishes the two groups. We've been tasked with developing recommendations based on our results for increasing the number of annual members. The results will then be shared with our marketing team.
